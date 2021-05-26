@@ -1,0 +1,185 @@
+.jquerycssmenu_ge, .jquerycssmenu_en{
+	width:975px;
+    /*width: 100%;*/
+	/*float:left;*/
+	/*border:1px solid #a4b3ca;*/
+    margin-left: auto;
+    margin-right: auto;
+	z-index:100 !important;
+	margin-top:0px;
+}
+
+.jquerycssmenu_en a {
+    text-transform: uppercase;
+}
+
+.jquerycssmenu_ge ul, .jquerycssmenu_en ul{
+	margin: 0px;
+	padding: 0px;
+    padding-left: 10px;
+	list-style-type: none;
+	
+}
+
+/*Top level list items*/
+.jquerycssmenu_ge ul li, .jquerycssmenu_en ul li{
+	position: relative;
+	display: inline;
+	float: left;
+	/*background:url('/i/menu-delimiter.gif') no-repeat center left;*/
+	color: #ecf5fe;
+	padding:0px;
+	margin:0px;
+	margin-right:-1px;
+    /*border: 1px solid green;*/
+}
+
+.jquerycssmenu_ge ul li{
+    padding-right:50px;
+	padding-left:23px;
+}
+
+.jquerycssmenu_en ul li {
+	padding-right:25px;
+	padding-left:25px;
+    /*border: 1px solid green;*/
+}
+
+.jquerycssmenu_ge ul li:first-child {
+    padding-left: 0px;
+}
+
+.jquerycssmenu_en ul li:first-child {
+    padding-left: 10px;
+}
+
+.jquerycssmenu_ge ul li ul li:first-child, .jquerycssmenu_en ul li ul li:first-child {
+    padding-left: 0px;
+    /*margin-left: 0px;*/
+}
+
+.jquerycssmenu_ge ul li:first-child a, .jquerycssmenu_en ul li:first-child a{
+    padding-left: 0px;
+}
+
+.jquerycssmenu_ge ul li a:first-child {
+    padding-left: 5px;
+}
+
+.jquerycssmenu_en ul li:first-child ul li {
+    /*border: 1px solid red;*/
+}
+
+.jquerycssmenu_ge ul li:last-child, .jquerycssmenu_en ul li:last-child {
+    padding-right: 0px;
+    /*margin-left: 5px;*/
+}
+
+.jquerycssmenu_ge ul li:last-child ul, .jquerycssmenu_en ul li:last-child ul {
+    /*padding-left: 2px;*/
+    margin-left: 20px;
+    width: 227px;
+}
+
+.jquerycssmenu_ge ul li li, .jquerycssmenu_en ul li li {
+	padding:0px;
+    
+}
+
+/*Top level menu link items style*/
+.jquerycssmenu_ge ul li a, .jquerycssmenu_en ul li a{
+	display: block;
+	padding:10px 35px 0px 25px;
+	color: #FFFFFF;
+	text-decoration: none;
+	/*font-weight:bold;*/    
+}
+
+.jquerycssmenu_ge ul li a {
+    font-family: BPG Nino Mtavruli;
+    font-size: 15px;
+}
+
+.jquerycssmenu_en ul li a {
+    font-family: Garamond, Verdana, Arial;
+    font-size: 14px;
+}
+
+.jquerycssmenu_ge ul li a:hover, .jquerycssmenu_en ul li a:hover{
+	color:#0072bb;
+}
+	
+/*1st sub level menu*/
+.jquerycssmenu_ge ul li ul, .jquerycssmenu_en ul li ul{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin-top:10px;
+	margin-left:0px;
+	padding:10px 0px 10px 10px;
+	display: block;
+	visibility: hidden;
+	z-index:101 !important;
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";     
+	/*filter: alpha(opacity=85);     
+	-khtml-opacity: 0.85;     
+	-moz-opacity: 0.85;*/     
+	opacity: 0.85;
+
+	border:0px solid #a4b3ca;
+	width:240px;
+	background:#00adef;
+}
+
+.jquerycssmenu_ge ul li:first-child ul, .jquerycssmenu_en ul li:first-child ul {
+    /*border:2px solid red;*/
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jquerycssmenu_ge ul li ul li, .jquerycssmenu_en ul li ul li{
+	display: list-item;
+    padding-left: 0px;
+	float: none;
+	padding-bottom:10px;
+	z-index:102 !important;
+	background-image:none;
+    /*border:0px solid #a4b3ca;*/
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jquerycssmenu_ge ul li ul li ul, .jquerycssmenu_en ul li ul li ul{
+	top: 0;
+}
+
+/* Sub level menu links style */
+.jquerycssmenu_ge ul li ul li a, .jquerycssmenu_en ul li ul li a{
+	width: 220px; /*width of sub menus*/
+	color: #FFFFFF;
+	padding: 0px;
+	margin:0;
+	text-align:left;
+	margin: 0;
+	border-top-width: 0;
+	font-weight:normal;
+	
+}
+
+.jquerycssmenu_ge ul li ul li a:hover, .jquerycssmenu_en ul li ul li a:hover{ /*sub menus hover style*/
+	color:#0072bb;
+}
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.rightarrowclass{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+

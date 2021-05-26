@@ -1,0 +1,133 @@
+#slides_wrapper {    
+    margin-left: auto;
+    margin-right: auto;
+    width: 740px;
+    height: 350px;    
+}
+
+#slides {
+	/*position:absolute;*/	
+	/*top:15px;
+	left:4px;	*/
+	z-index:100;
+    /*margin-bottom: 500px;*/    
+}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.slides_container {
+	width:730px;
+	height:321px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+    box-shadow: 0 8px 6px -2px #d2ab67;
+}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container a {
+	width:703px;
+	height:323px;
+	display:block;
+}
+
+/*
+	Next/prev buttons
+*/
+
+#slides .next,#slides .prev {
+	position:absolute;
+	top:107px;
+	left:-39px;
+	width:24px;
+	height:43px;
+	display:block;
+	z-index:101;
+	border:1px solid green;
+}
+
+#slides .next {
+	left:585px;
+}
+
+/*
+	Pagination
+*/
+
+.pagination {
+    margin-left: auto;
+    margin-right: auto;
+	height:0;
+	margin:0; 
+	padding:0;
+	/*margin:-24px auto 0;*/    
+    margin-top: 10px;
+    /*margin-left: 16px;*/
+	width:100px;
+    position: absolute;
+    visibility: visible;    
+    z-index:101;
+    /*border: 2px solid red;*/
+}
+
+.pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+    /*border: 1px solid #00aeef;*/
+    border-radius: 15px;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url(../i/pagination3.png);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+    /*background-color: #00aae8;*/
+}
+
+
+
+
+#slides_features .slides_container {
+    width:220px;
+    height:100px;
+  }
+#slides_features   .slides_container div,#slides_features .slides_container a {
+    width:220px;
+    height:100px;
+    display:block;
+    /*white-space:wrap;*/
+  }
+
+  
+#slides_news  .slides_container {
+   	width:220px;
+    height:100px;
+  }
+#slides_news   .slides_container div, #slides_news .slides_container a {
+    width:220px;
+    height:100px;
+    display:block;
+    /*white-space:wrap;*/
+}   

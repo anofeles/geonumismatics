@@ -1,0 +1,41 @@
+body, a, td {
+	font-family:Garamond, Verdana, Arial;
+    font-size:15.5px;
+}
+
+
+.leftmenu div a, .leftsubmenu a, .leftsubmenu_sel a {
+	font-size: 14px;
+}
+
+.leftmenu a {color:#0066b1; text-decoration:none; font-size:14px;}
+.leftmenu-sel a {font-size:14px;}
+
+.leftmenu-sel div a {
+    font-size: 14px;
+}
+
+.size_very_small {
+    font-size: 10.5px;
+}
+
+.size_small {
+	font-size:14px;
+}
+
+.size_medium {
+	font-size:14px;
+}
+
+.size_medium1 {
+    font-size:16px;
+}
+
+.size_big {
+	font-size:18px;
+}
+
+.menutitle, h1 {
+	font-size:16px;
+    font-weight: normal;
+}
