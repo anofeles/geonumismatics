@@ -4,13 +4,21 @@
 namespace App\Models;
 
 
-use Illuminate\Database\Eloquent\Model;
 
-class CoinGroups extends Model
+
+use Illuminate\Support\Facades\DB;
+
+
+class CoinGroups
 {
-    protected $table = 'coin_groups';
-    protected $fillable = [
-      'id','name_ge','name_en'
-    ];
+    public function get()
+    {
+        $data = DB::table('coin_groups')->get();
+        return $data;
+    }
 
+    public function first($id){
+        $data = DB::table('coin_groups')->where('id','=',$id)->first();
+        return $data;
+    }
 }

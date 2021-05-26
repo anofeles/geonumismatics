@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'WebController@index')->name('home');
 Route::get('home/{locale}/', 'WebController@index')->name('home.locale');
 Route::get('{locale}/categori', 'WebController@categori')->name('home.categori');
+Route::get('{locale}/type/{typeid}', 'WebController@type')->name('home.type');
 
 
 Route::namespace('\App\Http\Controllers\frontend\Auth')->group(function () {

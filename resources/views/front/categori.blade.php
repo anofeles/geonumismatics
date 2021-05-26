@@ -26,16 +26,21 @@
                     @foreach($CoinGroups as $CoinGroupsitem)
                     <div id="group_{{$CoinGroupsitem->id}}">
                         <a href="#" style="font-family: Arial;">
-{{--                            @php($name = 'name_'.$locale)--}}
+                            @php($name = 'name_'.$locale)
 
-{{--                            {{$CoinGroupsitem->$name}}--}}
+                            {{$CoinGroupsitem->$name}}
                         </a></div>
                     <br/>
                     <div style="display: none; padding: 5px; margin-bottom: 5px; background-color: #48A9E4;"
                          id="catalogue_types_{{$CoinGroupsitem->id}}">
+                        @foreach($Coin as $Coinitem)
+                            @if($Coinitem->group_id == $CoinGroupsitem->id)
+                                @php($type = 'type_'.$locale)
                         <ul>
-                            <li><a href="types/index0dab.html?type=2">The so-called tetradrachm</a></li>
+                            <li><a href="{{route('home.type',['locale'=>$locale,'typeid'=>$Coinitem->id])}}">{{$Coinitem->$type}}</a></li>
                         </ul>
+                            @endif
+                        @endforeach
                     </div>
                     <script>
                         $("#group_{{$CoinGroupsitem->id}}").click(function () {

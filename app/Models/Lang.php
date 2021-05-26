@@ -3,14 +3,14 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Lang extends Model
+class Lang
 {
-    protected $table = 'lang';
-    protected $fillable = [
-      'id','orderby','name','l'
-    ];
+    public function get()
+    {
+        $data = DB::table('lang')->get();
+        return $data;
+    }
 
 }
