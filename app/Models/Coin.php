@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class Coin
 {
+    public function query(){
+        $data = DB::table('coin');
+        return $data;
+    }
+
     public function get()
     {
         $data = DB::table('coin')->get();

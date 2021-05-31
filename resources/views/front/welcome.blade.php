@@ -3,8 +3,16 @@
 
 <div id="block_wrapper">
     <div id="center_blocks">
-        <div class="block1" onclick="window.location='catalogue/index.html'"><div class="inside_div"><a href="{{route('home.categori',['locale'=>$locale])}}">Catalogue of Georgian Numismatics</a></div></div>
-        <div class="block2" onclick="window.location='advanced_search/index.html'"><div class="inside_div"><a href="advanced_search/index.html">Advanced Search</a></div></div>
+        <div class="block1" onclick="window.location='{{route('home.categori',['locale'=>$locale])}}'">
+            <div class="inside_div">
+                <a href="{{route('home.categori',['locale'=>$locale])}}">Catalogue of Georgian Numismatics</a>
+            </div>
+        </div>
+        <div class="block2" onclick="window.location='{{route('home.form.serch',['locale'=>$locale])}}'">
+            <div class="inside_div">
+                <a href="{{route('home.form.serch',['locale'=>$locale])}}">Advanced Search</a>
+            </div>
+        </div>
 
         <div style="clear: both;"></div>
     </div>

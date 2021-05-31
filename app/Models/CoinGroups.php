@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\DB;
 
 class CoinGroups
 {
+    public function query(){
+        $data = DB::table('coin_groups');
+        return $data;
+    }
+
+
     public function get()
     {
         $data = DB::table('coin_groups')->get();
