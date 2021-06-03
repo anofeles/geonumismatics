@@ -20,6 +20,8 @@ Route::get('{locale}/categori/type/', 'WebController@type')->name('home.type');
 Route::get('{locale}/serch-form/', 'WebController@serchForm')->name('home.form.serch');
 Route::post('{locale}/serch/', 'WebController@serach')->name('home.serach');
 
+Route::post('{locale}/serchtop/', 'WebController@serchtop')->name('home.serchtop');
+
 
 Route::namespace('\App\Http\Controllers\frontend\Auth')->group(function () {
 // Authentication Routes...

@@ -10,6 +10,8 @@ use App\Models\CoinGroups;
 use App\Models\Lang;
 use App\Models\Coin;
 use App\Models\CoinPhotos;
+use App\Models\Data;
+
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -17,19 +19,24 @@ class WebController extends Controller
     protected $CoinGroups,
         $Lang,
         $Coin,
-        $CoinPhotos;
+        $CoinPhotos,
+    $Data
+    ;
 
     public function __construct(
         CoinGroups $CoinGroups,
         Lang $Lang,
         Coin $Coin,
-        CoinPhotos $CoinPhotos
+        CoinPhotos $CoinPhotos,
+        Data $Data
     )
     {
         $this->CoinGroups = $CoinGroups;
         $this->Lang = $Lang;
         $this->Coin = $Coin;
         $this->CoinPhotos = $CoinPhotos;
+        $this->Data = $Data;
+
         view()->share('Lang', $this->Lang->get());
     }
 
@@ -63,8 +70,8 @@ class WebController extends Controller
     public function serach($locale = 'ge', Request $request)
     {
         if ($request->method() == 'POST') {
-            $coin = $this->Coin->query();
-            $CoinGroups = $this->CoinGroups->query();
+            $coin = $this->Coin->qumodel_queryery();
+            $CoinGroups = $this->CoinGroups->model_query();
             if (!empty($request->group)) {
                 $CoinGroups->orWhere('name_ge', 'LIKE', "%$request->group%")->orWhere('name_en', 'LIKE', "%$request->group%");
             }
@@ -81,7 +88,7 @@ class WebController extends Controller
                 $coin->orWhere('nominal_ge', 'LIKE', "%$request->nom%")->orWhere('nominal_en', 'LIKE', "%$request->nom%");
             }
             if (!empty($request->dat)) {
-                $coin->orWhere('date_ge', 'LIKE', "%$request->dat%")->orWhere('date_en', 'LIKE', "%$request->dat%");
+                $coin->orWhere('date', 'LIKE', "%$request->dat%");
             }
             if (!empty($request->coll)) {
                 $coin->orWhere('collection_ge', 'LIKE', "%$request->coll%")->orWhere('collection_en', 'LIKE', "%$request->coll%");
@@ -100,6 +107,15 @@ class WebController extends Controller
             $coinrov = $coin->get();
         }
         return view('front.search',compact('locale','coingroprov','coinrov'));
+    }
+
+    public function serchtop($locale = 'ge', Request  $request){
+        $search = $request->q;
+        $Data = $this->Data->model_query();
+        $Data->orWhere('text', 'LIKE', "%$search%");
+        $Datarov = $Data->get();
+
+        return view('front.serchtop',compact('locale','Datarov'));
     }
 
 }

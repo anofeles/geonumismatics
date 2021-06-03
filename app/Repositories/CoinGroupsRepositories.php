@@ -9,9 +9,18 @@ use App\Models\CoinGroups;
 
 class CoinGroupsRepositories extends Repository
 {
+    protected $CoinGroups;
+
+    function __construct(
+        CoinGroups $CoinGroups
+    )
+    {
+      $this->CoinGroups = $CoinGroups;
+    }
+
     public function model()
     {
-     return CoinGroups::class;   // TODO: Implement model() method.
+     return $this->CoinGroups->model_query();   // TODO: Implement model() method.
     }
 
 }

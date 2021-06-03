@@ -4,11 +4,12 @@
 namespace App\Models;
 
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Coin
+class Coin extends Model
 {
-    public function query(){
+    public function model_query(){
         $data = DB::table('coin');
         return $data;
     }

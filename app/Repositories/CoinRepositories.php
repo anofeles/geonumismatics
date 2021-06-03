@@ -9,9 +9,18 @@ use App\Models\Coin;
 
 class CoinRepositories extends Repository
 {
+      protected $Coin;
+
+    function __construct(
+        Coin $Coin
+    )
+    {
+      $this->Coin = $Coin;
+    }
+
     public function model()
     {
-     return Coin::class;   // TODO: Implement model() method.
+     return $this->Coin->model_query();   // TODO: Implement model() method.
     }
 
 }

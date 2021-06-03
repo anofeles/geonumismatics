@@ -6,12 +6,13 @@ namespace App\Models;
 
 
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 
-class CoinGroups
+class CoinGroups  extends Model
 {
-    public function query(){
+    public function model_query(){
         $data = DB::table('coin_groups');
         return $data;
     }
