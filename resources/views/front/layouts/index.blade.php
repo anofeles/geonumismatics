@@ -15,8 +15,8 @@
 <footer>
     @include('front.component.footer')
 </footer>
-</div>
-</div>
+{{--</div>--}}
+{{--</div>--}}
 @include('front.component.script')
 </body>
 

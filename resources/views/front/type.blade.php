@@ -6,7 +6,7 @@
         <div id="nav">
             <div id="nav_child" class="size_small color-lblue">
 
-                <a class="color-white nav" href="{{route('home')}}">Home</a> <span class="arrow_right" style="">></span>
+                <a class="color-white nav" href="{{route('home')}}">{{__('site.home')}}</a> <span class="arrow_right" style="">></span>
                 @php($name = 'name_'.$locale)
                 @php($type = 'type_'.$locale)
                 @php($desc = 'desc_'.$locale)

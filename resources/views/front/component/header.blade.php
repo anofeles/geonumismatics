@@ -1,22 +1,27 @@
+
 <div id="header">
     <div id="top_left">
         <div id="menu">
             <ul class="top_menu">
                 <li style="background:none;">
-                    <a style="font-family: Arial;" class="size_medium  " href="{{route('home')}}">Home</a>
+                    <a style="font-family: Arial;" class="size_medium  " href="{{route('home')}}">{{__('site.home')}}</a>
                     <span style="color: #cb9331;">  |</span>
                 </li>
-                <li>
-                    <a style="font-family: Arial;" class="size_medium  " href="#">About Us</a>
-                    <span style="color: #cb9331;">  |</span>
-                </li>
-                <li>
-                    <a style="font-family: Arial;" class="size_medium  " href="#">Contact</a>
-                </li>
-
+                @foreach($Lang as $Langitem)
+                    @if($Langitem->orderby <= 20 && $locale == $Langitem->name)
+                        @foreach($data as $dataitem)
+                            @if($Langitem->id == $dataitem->lang_id)
+                            <li>
+                                <a style="font-family: Arial;" class="size_medium  " href="#">{{$dataitem->subject}}</a>
+                                <span style="color: #cb9331;">  |</span>
+                            </li>
+                            @endif
+                        @endforeach
+                    @endif
+                @endforeach
             </ul>
         </div>
-        <section class="site_title">Online English-Georgian Catalogue of Georgian Numismatics</section>
+        <section class="site_title">{{__('site.home_title')}}</section>
     </div>
     <div id="top_right" style="width: 335px;">
         <form method='post' action="{{route('home.serchtop',['locale'=>$locale])}}" name='search_form'>

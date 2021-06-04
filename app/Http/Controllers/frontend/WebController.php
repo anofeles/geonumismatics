@@ -13,6 +13,7 @@ use App\Models\CoinPhotos;
 use App\Models\Data;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class WebController extends Controller
 {
@@ -36,17 +37,22 @@ class WebController extends Controller
         $this->Coin = $Coin;
         $this->CoinPhotos = $CoinPhotos;
         $this->Data = $Data;
-
+        view()->share('data',$this->Data->model_query()
+            ->orWhere('foldername','=','contact')
+            ->orWhere('foldername','=','about_us')
+            ->get());
         view()->share('Lang', $this->Lang->get());
     }
 
     public function index($locale = 'ge')
     {
+        App::setLocale($locale);
         return view('front.welcome', compact('locale'));
     }
 
     public function categori($locale = 'ge')
     {
+        App::setLocale($locale);
         $CoinGroups = $this->CoinGroups->get();
         $Coin = $this->Coin->get();
         return view('front.categori', compact('CoinGroups', 'Coin', 'locale'));
@@ -54,6 +60,7 @@ class WebController extends Controller
 
     public function type($locale = 'ge', Request $request)
     {
+        App::setLocale($locale);
         $typeid = $request->typeid;
         $Coin = $this->Coin->first($typeid);
         $CoinGroups = $this->CoinGroups->first($Coin->group_id);
@@ -63,12 +70,13 @@ class WebController extends Controller
 
     public function serchForm($locale = 'ge', Request $request)
     {
-
+        App::setLocale($locale);
         return view('front.search_form', compact('locale'));
     }
 
     public function serach($locale = 'ge', Request $request)
     {
+        App::setLocale($locale);
         if ($request->method() == 'POST') {
             $coin = $this->Coin->qumodel_queryery();
             $CoinGroups = $this->CoinGroups->model_query();
@@ -110,6 +118,7 @@ class WebController extends Controller
     }
 
     public function serchtop($locale = 'ge', Request  $request){
+        App::setLocale($locale);
         $search = $request->q;
         $Data = $this->Data->model_query();
         $Data->orWhere('text', 'LIKE', "%$search%");

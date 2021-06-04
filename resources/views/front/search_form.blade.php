@@ -5,10 +5,8 @@
         <div id="nav">
             <div id="nav_child" class="size_small color-lblue">
 
-                <a class="color-white nav" href="{{route('home')}}">Home</a> <span class="arrow_right" style="">></span>
-                <span class="color-white nav nav_active">
-                                Advanced Search
-                </span>
+                <a class="color-white nav" href="{{route('home')}}">{{__('site.home')}}</a> <span class="arrow_right" style="">></span>
+                <span class="color-white nav nav_active"> {{__('site.cat_serach')}}  </span>
             </div>
         </div>
     </div>
@@ -24,7 +22,7 @@
                                 @csrf
                                 <table class="search_table">
                                     <tr>
-                                        <td>Group: </td>
+                                        <td>{{__('site.search_form.group')}}: </td>
                                         <td>
                                             <input type="text" class="autosuggest" name="group" value="" />
                                             <div class="dropdown">
@@ -36,7 +34,7 @@
                                         <script src="../../js/autosuggest/groups.js"></script>
                                     </tr>
                                     <tr>
-                                        <td>Type: </td>
+                                        <td>{{__('site.search_form.type')}}: </td>
                                         <td><input type="text" class="autosuggest1" name="type" value="" />
                                             <div class="dropdown">
                                                 <ul class="result1"></ul>
@@ -46,7 +44,7 @@
                                         <script src="../../js/autosuggest/types.js"></script>
                                     </tr>
                                     <tr>
-                                        <td>Description: </td>
+                                        <td>{{__('site.search_form.description')}}: </td>
                                         <td><input type="text" class="autosuggest2" name="desc" value="" /></td>
                                         <td>&nbsp;</td>
                                     </tr>
@@ -54,7 +52,7 @@
                                         <td colspan="3"><div class="line"></div></td>
                                     </tr>
                                     <tr>
-                                        <td>Mint: </td>
+                                        <td>{{__('site.search_form.mint')}}: </td>
                                         <td><input type="text" class="autosuggest3" name="mint" value="" />
                                             <div class="dropdown">
                                                 <ul class="result3"></ul>
@@ -64,7 +62,7 @@
                                         <script src="../../js/autosuggest/mint.js"></script>
                                     </tr>
                                     <tr>
-                                        <td>Nominal: </td>
+                                        <td>{{__('site.search_form.nominal')}}: </td>
                                         <td><input type="text" class="autosuggest4" name="nom" value="" />
                                             <div class="dropdown">
                                                 <ul class="result4"></ul>
@@ -74,7 +72,7 @@
                                         <script src="../../js/autosuggest/nom.js"></script>
                                     </tr>
                                     <tr>
-                                        <td>Date: </td>
+                                        <td>{{__('site.search_form.date')}}: </td>
                                         <td><input type="text" class="autosuggest5" name="dat" value="" />
                                             <div class="dropdown">
                                                 <ul class="result5"></ul>
@@ -84,7 +82,7 @@
                                         <script src="../../js/autosuggest/date.js"></script>
                                     </tr>
                                     <tr>
-                                        <td>Collection: </td>
+                                        <td>{{__('site.search_form.collection')}}: </td>
                                         <td><input type="text" class="autosuggest6" name="coll" />
                                             <div class="dropdown">
                                                 <ul class="result6"></ul>
@@ -94,12 +92,12 @@
                                         <script src="../../js/autosuggest/coll.js"></script>
                                     </tr>
                                     <tr>
-                                        <td>Imported coins found in Georgia: </td>
+                                        <td>{{__('site.search_form.imported')}}: </td>
                                         <td><input type="text" class="autosuggest7" name="for" /></td>
                                         <td class="last">&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3"><input type="submit" name="search_coins" class="search_coins" value="Search" /></td>
+                                        <td colspan="3"><input type="submit" name="search_coins" class="search_coins" value="{{__('site.search_form.search')}}" /></td>
                                     </tr>
                                 </table>
                             </form>
