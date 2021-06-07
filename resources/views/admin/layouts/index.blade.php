@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-@include('admin.component.head')
+    @include('admin.component.head')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -13,7 +13,7 @@
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-       @include('admin.component.top')
+        @include('admin.component.top')
     </nav>
     <!-- /.navbar -->
 
@@ -24,15 +24,11 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-       @yield('content')
+        @yield('content')
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0
-        </div>
+        @include('admin.component.footer')
     </footer>
 
     <!-- Control Sidebar -->
