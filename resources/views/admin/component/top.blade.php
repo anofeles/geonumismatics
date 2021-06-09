@@ -10,3 +10,16 @@
         <a href="{{route('admin.home.logout')}}" class="nav-link">log out</a>
     </li>
 </ul>
+
+<!-- Right navbar links -->
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        @foreach($lang as $langitem)
+            @if($langitem->orderby <= 20)
+                <a href="{{route('admin.local',['localid'=>$langitem->id,'local'=>$langitem->name])}}" role="button">
+                    {{$langitem->name}}
+                </a> |
+            @endif
+        @endforeach
+    </li>
+</ul>

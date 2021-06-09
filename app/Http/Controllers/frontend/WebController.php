@@ -37,6 +37,7 @@ class WebController extends Controller
         $this->Coin = $Coin;
         $this->CoinPhotos = $CoinPhotos;
         $this->Data = $Data;
+
         view()->share('data',$this->Data->model_query()
             ->orWhere('foldername','=','contact')
             ->orWhere('foldername','=','about_us')
@@ -53,8 +54,8 @@ class WebController extends Controller
     public function categori($locale = 'ge')
     {
         App::setLocale($locale);
-        $CoinGroups = $this->CoinGroups->get();
-        $Coin = $this->Coin->get();
+        $CoinGroups = $this->CoinGroups->model_query()->get();
+        $Coin = $this->Coin->model_query()->get();
         return view('front.categori', compact('CoinGroups', 'Coin', 'locale'));
     }
 
@@ -78,7 +79,7 @@ class WebController extends Controller
     {
         App::setLocale($locale);
         if ($request->method() == 'POST') {
-            $coin = $this->Coin->qumodel_queryery();
+            $coin = $this->Coin->model_query();
             $CoinGroups = $this->CoinGroups->model_query();
             if (!empty($request->group)) {
                 $CoinGroups->orWhere('name_ge', 'LIKE', "%$request->group%")->orWhere('name_en', 'LIKE', "%$request->group%");

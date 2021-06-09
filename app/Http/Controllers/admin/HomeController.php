@@ -14,6 +14,7 @@ use App\Models\CoinPhotos;
 use App\Models\Lang;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -48,14 +49,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($local = 'ge')
+    public function index($localid = 2,$local = 'ge')
     {
-        App:setlocale($local);
+        App::setlocale($local);
         $page = $this->Data->model_query()
             ->orWhere('foldername','=','contact')
             ->orWhere('foldername','=','about_us')
             ->get();
 
-        return view('admin.home',compact('page'));
+        return view('admin.home',compact('page','local','localid'));
     }
 }
