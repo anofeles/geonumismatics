@@ -18,10 +18,17 @@ Route::prefix('backend')->group(function () {
         Route::get('/img/{local}/{photoid}','HomeController@categorisphoto')->name('admin.delete.photo');
     });
     Route::prefix('menus')->group(function () {
-
+        Route::get('/{local}','HomeController@menuviu')->name('admin.local.menus');
+        Route::get('/{local}/{menuid}','HomeController@menuedit')->name('admin.edit.menus');
+        Route::post('/{local}/{menuid}','HomeController@menuedit')->name('admin.edit.menus');
     });
-    Route::prefix('pages')->group(function () {
-
+    Route::prefix('group')->group(function () {
+        Route::get('/{local}','HomeController@groupviu')->name('admin.local.group');
+        Route::get('/add/{local}','HomeController@groupadd')->name('admin.add.group');
+        Route::post('/add/{local}','HomeController@groupadd')->name('admin.add.group');
+        Route::get('/edit/{local}/{groupid}','HomeController@groupedit')->name('admin.edit.group');
+        Route::post('/edit/{local}/{groupid}','HomeController@groupedit')->name('admin.edit.group');
+        Route::get('/delete/{local}/{groupid}','HomeController@groupdelete')->name('admin.delete.group');
     });
 });
 
