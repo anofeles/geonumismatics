@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cb3d2217-2b62-44d1-a0c6-b3098687a0c7" name="geonumismatics1" url="http://geonumismatics1.tsu.ge">
+        <fileTransfer rootFolder="/public_html" host="geonumismatics1.tsu.ge" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

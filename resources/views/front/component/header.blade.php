@@ -4,7 +4,7 @@
         <div id="menu">
             <ul class="top_menu">
                 <li style="background:none;">
-                    <a style="font-family: Arial;" class="size_medium  " href="{{route('home')}}">{{__('site.home')}}</a>
+                    <a style="font-family: Arial;" class="size_medium  " href="{{route('home.locale',['locale'=>$locale])}}">{{__('site.home')}}</a>
                     <span style="color: #cb9331;">  |</span>
                 </li>
                 @foreach($Lang as $Langitem)
@@ -12,7 +12,9 @@
                         @foreach($data as $dataitem)
                             @if($Langitem->id == $dataitem->lang_id)
                             <li>
-                                <a style="font-family: Arial;" class="size_medium  " href="#">{{$dataitem->subject}}</a>
+                                <a style="font-family: Arial;" class="size_medium  " href="{{route('home.page',['locale'=>$locale,'pageid'=>$dataitem->id])}}">
+                                    {{$dataitem->subject}}
+                                </a>
                                 <span style="color: #cb9331;">  |</span>
                             </li>
                             @endif

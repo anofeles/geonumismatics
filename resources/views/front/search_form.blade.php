@@ -5,7 +5,7 @@
         <div id="nav">
             <div id="nav_child" class="size_small color-lblue">
 
-                <a class="color-white nav" href="{{route('home')}}">{{__('site.home')}}</a> <span class="arrow_right" style="">></span>
+                <a class="color-white nav" href="{{route('home.locale',['locale'=>$locale])}}">{{__('site.home')}}</a> <span class="arrow_right" style="">></span>
                 <span class="color-white nav nav_active"> {{__('site.cat_serach')}}  </span>
             </div>
         </div>

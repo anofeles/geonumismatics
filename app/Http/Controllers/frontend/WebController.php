@@ -51,6 +51,12 @@ class WebController extends Controller
         return view('front.welcome', compact('locale'));
     }
 
+    public function page($locale = 'ge',$pageid=0){
+        App::setLocale($locale);
+        $page = $this->Data->model_query()->where('id','=',$pageid)->first();
+        return view('front.page', compact('locale','page'));
+    }
+
     public function categori($locale = 'ge')
     {
         App::setLocale($locale);

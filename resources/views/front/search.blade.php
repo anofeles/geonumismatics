@@ -7,7 +7,7 @@
         <div id="nav">
             <div id="nav_child" class="size_small color-lblue">
 
-                <a class="color-white nav" href="{{route('home')}}">Home</a> <span class="arrow_right" style="">></span>
+                <a class="color-white nav" href="{{route('home.locale',['locale'=>$locale])}}">Home</a> <span class="arrow_right" style="">></span>
                 <span class="color-white nav nav_active">
                     Catalogue of Georgian Numismatics
                 </span>
